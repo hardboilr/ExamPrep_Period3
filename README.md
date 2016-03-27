@@ -70,7 +70,12 @@ MongoDB is schema-less and Mongoose adds schemas. This might seem counterintuiti
 
 ##Explain, using relevant examples, the strategy for querying MongoDB (all CRUD operations) 
 
+###Ex. DB: Find document with id. 
+Look in the collection "jokes" and find the document with specific id. Return the document called "data". <br>
 ```javascript
+var connection = require('../db/db');
+var ObjectId = require('mongodb').ObjectID;
+
 var getJoke = function (id, callback) {
     var db = getConnection();
 
@@ -83,6 +88,23 @@ var getJoke = function (id, callback) {
 };
 ```
 
+###Ex. REST: find all jokes
+Define endpoint "/jokes". Call function "allJokes" and output the returned data as json in the response.
+
+```javascript
+var router = express.Router();
+var jokes = require('../model/joke');
+
+router.get('/jokes', function (req, res, next) {
+    jokes.allJokes(function (err, data) {
+        if (err) {
+            res.json(getJsonError(err));
+        }
+        res.json(data);
+    });
+});
+```
+
 ###Refer to the following projects for full examples
 
 DB CRUD: [Github project: MongoEx1../model/joke.js](https://github.com/hardboilr/MongoEx1/blob/master/model/joke.js) <br>
@@ -90,10 +112,35 @@ DB CRUD: [Github project: MongoEx1../model/joke.js](https://github.com/hardboilr
 REST CRUD: [Github project: MongoEx1../routes/jokes.js](https://github.com/hardboilr/MongoEx1/blob/master/routes/jokes.js)
 
 
-##Demonstrate, using a REST-API, how to perform all CRUD operations on a MongoDB 
-##Explain the benefits from using Mongoose, and provide an example involving all CRUD operations 
+##Demonstrate, using a REST-API, how to perform all CRUD operations on a MongoDB
+Refer to previous question: ***"Explain, using relevant examples, the strategy for querying MongoDB (all CRUD operations)"*.**
+ 
+##Explain the benefits from using Mongoose, and provide an example involving all CRUD operations
+Refer to previous question: ***"Explain reasons to add a layer like Mongoose, on top on of a schema-less database like MongoDB"*.**
+
+Ex. Using Schema and CRUD operations -> [Github project: Mongoose_1](https://github.com/hardboilr/Mongoose_1) <br>
+Ex. Using Schema and CRUD operations + REST -> [Github project Mongoose_2](https://github.com/hardboilr/Mongoose_2)
+ 
 ##Explain how redis "fits" into the NoSQL world, and provide an example of how to use it. 
-##Explain, using a relevant example, how redis (or a similar) can increase scalability (drastic) for a server using 
-server side sessions 
+
+>One of the most apparent use cases for Redis is using it as a Session Store. The advantages of using Redis over other session stores, is that Redis offers persistence. <br> While maintaining a cache isn't typically mission critical with regards to consistency, most users wouldn't exactly enjoy if all their cart sessions went away
+
+Small example showing how to persist a cookie(session) to a remote Redis database ->
+[Github project: Redis-Session](https://github.com/hardboilr/RedisSession)
+
+*sources* <br>
+[MEAN slides Redis](http://js2016.azurewebsites.net/redis/redis.html#24)
+
+##Explain, using a relevant example, how redis (or a similar) can increase scalability (drastic) for a server using server side sessions
+
+When your customer or user logs in, they authenticate and receive a token. This token then allows them to interact with any server in your web tier - the token is sent each time. There is no need for a "master" server and "slave" servers, because each server is the same. This allows you to scale horizontally very easily. <br>
+The session data is then stored in a fast database like Redis.
+
+*sources*<br>
+[Article on Heroku](https://devcenter.heroku.com/articles/node-sessions)<br>
+[Examples on using session with mongoDB or Redis](http://expressjs-book.com/forums/topic/express-js-sessions-a-detailed-tutorial/)<br>
+[More info about scaling with sessions](https://developer.rackspace.com/blog/scaling-horizontally-handling-sessions-on-the-open-cloud/)
+ 
 ##Explain, using a relevant example, a full MEAN application including relevant test cases to test the REST-API 
-(not on the production database) 
+
+(insert link to finished game-project here) 
