@@ -49,8 +49,6 @@ Redis typically holds the whole **dataset in memory**, and saves to disk every t
 ####Example
 ```javascript
 set users:leto '{"name": leto, "planet": dune, "likes": ["spice"]}'
-```<br>
-```javascript
 get users:leto
 ```
 
