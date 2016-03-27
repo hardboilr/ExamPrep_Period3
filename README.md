@@ -20,10 +20,10 @@ Relational SQL Database like MySQL.
 - (-) Mostly lack ACID
 
 Sources: 
-[Wikipedia NoSQL](https://en.wikipedia.org/wiki/NoSQL) <br/>
-[Wikipedia CAP Theorem](https://en.wikipedia.org/wiki/CAP_theorem)
-[MEAN slides NoSQL and MongoDB](http://js2016.azurewebsites.net/mongoDB/mongo.html#7)
-[ACID](https://en.wikipedia.org/wiki/ACID)
+[Wikipedia NoSQL](https://en.wikipedia.org/wiki/NoSQL) <br>
+[Wikipedia CAP Theorem](https://en.wikipedia.org/wiki/CAP_theorem) <br>
+[MEAN slides NoSQL and MongoDB](http://js2016.azurewebsites.net/mongoDB/mongo.html#7) <br>
+[ACID](https://en.wikipedia.org/wiki/ACID) <br>
 
 #Explain how databases like MongoDB and redis would be classified in the NoSQL world 
 
