@@ -5,7 +5,6 @@
 ![alt text](http://dataconomy.com/wp-content/uploads/2014/07/SQL-vs.-NoSQL.png "SQL vs noSQL")
 
 Sources:
-
 [Wikipedia](https://en.wikipedia.org/wiki/NoSQL)
 
 #Explain Pros & Cons in using a NoSQL database like MongoDB as your data store, compared to a traditional 
@@ -23,11 +22,8 @@ Relational SQL Database like MySQL.
 Sources: 
 
 [Wikipedia NoSQL](https://en.wikipedia.org/wiki/NoSQL)
-
 [Wikipedia CAP Theorem](https://en.wikipedia.org/wiki/CAP_theorem)
-
 [MEAN slides NoSQL and MongoDB](http://js2016.azurewebsites.net/mongoDB/mongo.html#7)
-
 [ACID](https://en.wikipedia.org/wiki/ACID)
 
 #Explain how databases like MongoDB and redis would be classified in the NoSQL world 
